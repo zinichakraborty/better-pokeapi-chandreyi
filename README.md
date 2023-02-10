@@ -5,7 +5,7 @@ Create a backend that abstracts some aspects and combines features of the PokeAP
 
 ## Submission
 - Send the link to the repo containing your code in the #gt-bootcamp-dev Slack channel (there will be a thread for this later)
-- Create a > 3 minute video walkthrough of your API
+- Create a less than 3 minute video walkthrough of your API
 
 ## Requirements
 - Must accurately represent the demo
@@ -21,7 +21,7 @@ All API endpoints should exist in the `pages/api` folder of your Next.js project
 ```http
 GET /
 ```
-- returns the name, sprite, and typeo of random Pokemon
+- returns the name, sprite, and type of random Pokemon
 
 ```http
 GET /pokemon/:name
@@ -55,7 +55,7 @@ POST /battle
 ```http
 POST /catch
 ```
-- Returns whether a Pokemon is caught based on the its HP. Assume that the a regular Poke Ball is used. Assume that the capture method follows the algorithms in Generation I.
+- Returns whether a Pokemon is caught based on the its HP. Assume that a regular Poke Ball is used. Assume that the capture method follows the algorithms in Generation I.
 - Capture Algorithm (Generation I)
 	- Generate a random integer between $[1, 255]$ called $N$
 	- Generate a random integer between $[1, 255]$ called $BALL$
