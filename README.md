@@ -67,6 +67,19 @@ POST /catch
 	- `pokemon` - name of the pokemon (String)
 - Challenge (Optional): Allow for different Poke Ball types to be sent in the body of the request. Use the capture algorithm for a different Generation (see [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Catch_rate))
 
+## Testing
+The frontend part of the application has hard-coded test cases just to allow you to get a general sense of how your API should be built. I recommend testing and debugging your API with the tool Postman that I had everyone download. 
+
+Also, if you are wondering what response should be returned, pay close attention to how the frontend code is written. For instance, if I destructure a variable `types` from the data object like so:
+```js
+let { types } = data 
+```
+The JSON response should contain the key `types`. If I then map over the variable `types` like so:
+```jsx
+types.map(type => <span>{type}</span>)
+```
+Then, your API implementation should return `types` as an array of strings. 
+
 ## Go above & beyond
 - Feel free to edit and enhance the UI (though the overall layout of the app should align with the requirements)
 
