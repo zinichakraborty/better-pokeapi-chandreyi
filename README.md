@@ -43,6 +43,7 @@ GET /experience/:name?level={level_num}
 ```
 - calculates and returns the experience a Pokemon has based on its name and level.
 - level is passed into the the request as a **query** parameter
+- See [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Experience) for info on growth rates and experience 
 
 ```http
 POST /battle
