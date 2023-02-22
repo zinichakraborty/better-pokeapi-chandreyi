@@ -11,5 +11,5 @@ export default async function handler(req, res) {
     let name = response.data.name
     let sprite = response.data.sprites.front_default
     res.status(200)
-    return res.send({pokemonName : name, sprite : sprite, types : types})
+    return res.send({name : name, sprite : sprite, types : types})
 }
