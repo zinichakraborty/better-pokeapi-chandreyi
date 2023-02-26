@@ -10,6 +10,5 @@ export default async function handler(req, res) {
     let types = response.data.types.map(type => {return type.type.name})
     let name = response.data.name
     let sprite = response.data.sprites.front_default
-    res.status(200)
-    return res.send({name : name, sprite : sprite, types : types})
+    return res.status(200).send({name : name, sprite : sprite, types : types})
 }

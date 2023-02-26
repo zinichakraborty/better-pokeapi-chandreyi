@@ -22,6 +22,5 @@ export default async function handler(req, res) {
     } else {
         evolution = data.evolves_to[0].evolves_to[0].species.name
     }
-    res.status(200)
-    return res.send({evolution: evolution})
+    return res.status(200).send({evolution: evolution})
 }

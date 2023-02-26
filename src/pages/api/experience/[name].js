@@ -37,6 +37,5 @@ export default async function handler(req, res) {
             experience = n^3 * ((n /2) + 32) / 50
         }
     }
-    res.status(200)
-    return res.send({experience: experience})
+    return res.status(200).send({experience: experience})
 }
