@@ -9,6 +9,6 @@ export default async function handler(req, res) {
     } catch (error) {
         console.log(error)
     }
-    let winner = (response1.data.base_experience > response2.data.base_experience) ? req.body.pokemon1 : req.body.pokemon2
+    let winner = (response1.data.stats[0].base_stat > response2.data.stats[0].base_stat) ? req.body.pokemon1 : req.body.pokemon2
     return res.status(200).send({winner : winner})
 }
