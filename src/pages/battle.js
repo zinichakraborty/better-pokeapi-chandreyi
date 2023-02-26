@@ -2,10 +2,13 @@ import axios from 'axios'
 import useSWR from 'swr'
 import Link from 'next/link'
 
+const p1 = "pikachu"
+const p2 = "lucario"
+
 const fetcher = async (url) => {
     const res = await axios.post(url, {
-        pokemon1: "pikachu",
-        pokemon2: "lucario"
+        pokemon1: p1,
+        pokemon2: p2
     })
     return res.data
 }
@@ -24,7 +27,7 @@ export default function Battle() {
     return (
         <>
             <Link href="/"><h1>Better PokeAPI</h1></Link>
-            <h2>Battle: Pikachu vs. Lucario</h2>
+            <h2>Battle: {p1} vs. {p2}</h2>
 
             {isValidating ? (
                 <h2>Validating</h2>

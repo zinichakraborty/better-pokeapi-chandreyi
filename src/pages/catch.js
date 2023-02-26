@@ -2,9 +2,12 @@ import axios from 'axios'
 import useSWR from 'swr'
 import Link from 'next/link'
 
-const fetcher = async (url) => {
+let t = 255
+
+let fetcher = async (url) => {
     const res = await axios.post(url, {
-        pokemon: "pikachu"
+        pokemon: "pikachu",
+        type: t
     })
     return res.data
 }
@@ -37,6 +40,15 @@ export default function Battle() {
                     )}
                 </>
             )}
+
+            <button onclick = "ball(255)">Poke Ball</button>
+            <button onclick = "ball(200)">Great Ball</button>
+            <button onclick = "ball(150)">Ultra Ball</button>
         </>
     )
+
+    function ball(val) {
+        t = val
+        Battle()
+    }
 }

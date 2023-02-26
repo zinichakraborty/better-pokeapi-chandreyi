@@ -1,5 +1,7 @@
-body {
+body, h2 {
+    background: linear-gradient(90deg, #19A323, #267C1E, #19A368, #267C1E);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
 }
 a {
     display: block;
@@ -8,5 +10,5 @@ a {
     max-width: 500px;
     border-radius: 5px;
     text-decoration: none;
-    color: black;
+    color: white;
 }

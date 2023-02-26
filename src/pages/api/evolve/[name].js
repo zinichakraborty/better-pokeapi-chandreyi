@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     let data = response.data.chain
     let evolution
     if (data.evolves_to.length == 0) {
-        evolution = data.species.name
+        evolution = data.species.name + " (there is no evolution)"
     } else if (data.evolves_to[0].length == 1) {
         evolution = data.evolves_to[0].species.name
     } else {
