@@ -22,11 +22,11 @@ export default function Battle() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { caught } = data
+    let { caught, color } = data
 
     return (
-        <>
-            <Link href="/"><h1>Better PokeAPI</h1></Link>
+        <div style={{backgroundColor: `${color}`}}>
+            <Link href="/" id = "title"><h1>Better PokeAPI</h1></Link>
             <h2>Catching: {name}</h2>
 
             {isValidating ? (
@@ -44,7 +44,7 @@ export default function Battle() {
             <button onclick = "ball(255)">Poke Ball</button>
             <button onclick = "ball(200)">Great Ball</button>
             <button onclick = "ball(150)">Ultra Ball</button>
-        </>
+        </div>
     )
 
     function ball(val) {

@@ -22,11 +22,11 @@ export default function Battle() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { winner } = data
+    let { winner, color } = data
 
     return (
-        <>
-            <Link href="/"><h1>Better PokeAPI</h1></Link>
+        <div style={{backgroundColor: `${color}`}}>
+            <Link href="/" id = "title"><h1>Better PokeAPI</h1></Link>
             <h2>Battle: {p1} vs. {p2}</h2>
 
             {isValidating ? (
@@ -36,6 +36,6 @@ export default function Battle() {
                     <h2>Winner: {winner}</h2>
                 </>
             )}
-        </>
+        </div>
     )
 }

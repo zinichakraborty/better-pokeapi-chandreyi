@@ -18,11 +18,11 @@ export default function Exp() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { experience } = data
+    let { experience, color } = data
 
     return (
-        <>
-            <Link href="/"><h1>Better PokeAPI</h1></Link>
+        <div style={{backgroundColor: `${color}`}}>
+            <Link href="/" id = "title"><h1>Better PokeAPI</h1></Link>
             <h2>Name: {name}</h2>
             <h2>Level: {level}</h2>
             {isValidating ? (
@@ -32,6 +32,6 @@ export default function Exp() {
                     <h2>Experience: {experience}</h2>
                 </>
             )}
-        </>
+        </div>
     )
 }

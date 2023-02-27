@@ -37,5 +37,11 @@ export default async function handler(req, res) {
             experience = n^3 * ((n /2) + 32) / 50
         }
     }
-    return res.status(200).send({experience: experience})
+    try {
+        response = await axios.get('https://pokeapi.co/api/v2/pokemon-species/' + req.query.name);
+    } catch (error) {
+        console.log(error)
+    }
+    let color = response.data.color.name
+    return res.status(200).send({experience: experience, color: color})
 }

@@ -22,5 +22,11 @@ export default async function handler(req, res) {
     } else {
         evolution = data.evolves_to[0].evolves_to[0].species.name
     }
-    return res.status(200).send({evolution: evolution})
+    try {
+        response = await axios.get('https://pokeapi.co/api/v2/pokemon-species/' + req.query.name);
+    } catch (error) {
+        console.log(error)
+    }
+    let color = response.data.color.name
+    return res.status(200).send({evolution: evolution, color: color})
 }

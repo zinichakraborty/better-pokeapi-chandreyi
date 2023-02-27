@@ -11,7 +11,7 @@ const fetcher = async (url) => {
 export default function Name() {
     let { data, error, isLoading, isValidating } = useSWR(`/api/pokemon/pikachu`, fetcher)
 
-    if (isLoading) return <div>Loading</div>
+    if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
         <>
             <Link href="/"><h1>Better PokeAPI</h1></Link>
@@ -19,12 +19,12 @@ export default function Name() {
         </>
     )
 
-    let { pokemonName, sprite, types } = data
+    let { pokemonName, sprite, types, color } = data
 
 
     return (
-        <>
-            <h1><Link href="/">Better PokeAPI</Link></h1>
+        <div style={{backgroundColor: `${color}`}}>
+            <h1><Link href="/" id = "title">Better PokeAPI</Link></h1>
             {isValidating ? (
                 <h2>Validating</h2>
             ) : (
@@ -34,6 +34,6 @@ export default function Name() {
                     <h2>Types: {types.map(type => <span>{type} </span>)}</h2>
                 </>
             )}
-        </>
+        </div>
     )
 }
