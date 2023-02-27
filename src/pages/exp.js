@@ -18,7 +18,7 @@ export default function Exp() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { experience, color } = data
+    let { experience, color, sprite } = data
 
     return (
         <div style={{backgroundColor: `${color}`}}>
@@ -30,6 +30,7 @@ export default function Exp() {
             ) : (
                 <>
                     <h2>Experience: {experience}</h2>
+                    <img src={sprite} />
                 </>
             )}
         </div>

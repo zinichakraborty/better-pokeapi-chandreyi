@@ -2,7 +2,7 @@ import axios from 'axios'
 import useSWR from 'swr'
 import Link from 'next/link'
 
-const p1 = "pikachu"
+const p1 = "mewtwo"
 const p2 = "lucario"
 
 const fetcher = async (url) => {

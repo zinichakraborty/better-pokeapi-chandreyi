@@ -3,17 +3,17 @@ import useSWR from 'swr'
 import Link from 'next/link'
 
 let t = 255
+const name = "gyarados"
 
 let fetcher = async (url) => {
     const res = await axios.post(url, {
-        pokemon: "pikachu",
+        pokemon: name,
         type: t
     })
     return res.data
 }
 
 export default function Battle() {
-    const name = "pikachu"
     const { data, error, isLoading, isValidating } = useSWR(`/api/catch/`, fetcher)
     if (isLoading) return <div>Loading</div>
     if (!data) return (

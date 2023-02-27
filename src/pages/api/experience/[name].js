@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     } catch (error) {
         console.log(error)
     }
+    let color = response.data.color.name
     let growth_rate = response.data.growth_rate.name
     let n = req.query.level
     let experience
@@ -38,10 +39,10 @@ export default async function handler(req, res) {
         }
     }
     try {
-        response = await axios.get('https://pokeapi.co/api/v2/pokemon-species/' + req.query.name);
+        response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + req.query.name);
     } catch (error) {
         console.log(error)
     }
-    let color = response.data.color.name
-    return res.status(200).send({experience: experience, color: color})
+    let sprite = response.data.sprites.front_shiny
+    return res.status(200).send({experience: experience, color: color, sprite: sprite})
 }

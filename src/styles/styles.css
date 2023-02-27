@@ -29,7 +29,7 @@ h1 {
     animation: animate 5s linear infinite;
 }
 h2 {
-    background: linear-gradient(90deg, #19A323, #267C1E, #19A368, #267C1E);
+    background: linear-gradient(90deg, #c78f0d, #dd6f08, #e14706);
     background-size: 300%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

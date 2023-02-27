@@ -9,7 +9,7 @@ const fetcher = async (url) => {
 }
 
 export default function Name() {
-    let { data, error, isLoading, isValidating } = useSWR(`/api/pokemon/pikachu`, fetcher)
+    let { data, error, isLoading, isValidating } = useSWR(`/api/pokemon/magikarp`, fetcher)
 
     if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
