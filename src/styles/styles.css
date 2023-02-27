@@ -20,7 +20,7 @@ button {
     font-size: 20px;
     cursor: pointer;
 }
-#title {
+h1 {
     background: linear-gradient(90deg, #a31987, #a618cd, #1963a3, #0da5c7);
     background-size: 300%;
     -webkit-text-fill-color: transparent;
@@ -43,4 +43,7 @@ h2 {
     100%{
         background-position: 300%;
     }
+}
+div {
+    padding: 20px
 }

@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     } catch (error) {
         console.log(error)
     }
+    let color = response.data.color.name
     let evo_endpoint = response.data.evolution_chain.url
     try {
         response = await axios.get(evo_endpoint);
@@ -23,10 +24,10 @@ export default async function handler(req, res) {
         evolution = data.evolves_to[0].evolves_to[0].species.name
     }
     try {
-        response = await axios.get('https://pokeapi.co/api/v2/pokemon-species/' + req.query.name);
+        response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + evolution);
     } catch (error) {
         console.log(error)
     }
-    let color = response.data.color.name
-    return res.status(200).send({evolution: evolution, color: color})
+    let evosprite = response.data.sprites.front_default
+    return res.status(200).send({evolution: evolution, color: color, evosprite: evosprite})
 }

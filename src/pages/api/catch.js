@@ -8,7 +8,6 @@ export default async function handler(req, res) {
         console.log(error)
     }
     let type = req.body.type
-    console.log(type)
     let hpMax = response.data.stats[0].base_stat
     let hpCurr = Math.floor(Math.random() * hpMax + 1)
     let n = Math.floor(Math.random() * 255 + 1)

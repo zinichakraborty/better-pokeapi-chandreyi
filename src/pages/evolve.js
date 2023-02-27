@@ -17,18 +17,19 @@ export default function Evolve() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { evolution, color } = data
+    let { evolution, color, evosprite } = data
 
 
     return (
         <div style={{backgroundColor: `${color}`}}>
-            <Link href="/" id = "title"><h1>Better PokeAPI</h1></Link>
+            <Link href="/"><h1>Better PokeAPI</h1></Link>
             <h2>Name: {name}</h2>
             {isValidating ? (
                 <h2>Validating</h2>
             ) : (
                 <>
                     <h2>Next Evolution: {evolution}</h2>
+                    <img src={evosprite} />
                 </>
             )}
         </div>

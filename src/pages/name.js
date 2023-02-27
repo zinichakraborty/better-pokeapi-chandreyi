@@ -24,7 +24,7 @@ export default function Name() {
 
     return (
         <div style={{backgroundColor: `${color}`}}>
-            <h1><Link href="/" id = "title">Better PokeAPI</Link></h1>
+            <h1><Link href="/">Better PokeAPI</Link></h1>
             {isValidating ? (
                 <h2>Validating</h2>
             ) : (

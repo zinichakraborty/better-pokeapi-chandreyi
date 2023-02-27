@@ -26,7 +26,7 @@ export default function Battle() {
 
     return (
         <div style={{backgroundColor: `${color}`}}>
-            <Link href="/" id = "title"><h1>Better PokeAPI</h1></Link>
+            <Link href="/"><h1>Better PokeAPI</h1></Link>
             <h2>Catching: {name}</h2>
 
             {isValidating ? (

@@ -17,5 +17,7 @@ export default async function handler(req, res) {
         console.log(error)
     }
     let color = response.data.color.name
-    return res.status(200).send({winner : winner, color : color})
+    let win = (response1.data.stats[0].base_stat > response2.data.stats[0].base_stat) ? response1 : response2
+    let winsprite = win.data.sprites.front_default
+    return res.status(200).send({winner : winner, color : color, winsprite : winsprite})
 }
