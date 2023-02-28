@@ -1,19 +1,21 @@
 import axios from 'axios'
 import useSWR from 'swr'
 import Link from 'next/link'
+import { useState } from 'react'
 
-let t = 255
 const name = "gyarados"
 
-let fetcher = async (url) => {
-    const res = await axios.post(url, {
-        pokemon: name,
-        type: t
-    })
-    return res.data
-}
-
 export default function Battle() {
+    const [t, setT] = useState(255);
+
+    let fetcher = async (url) => {
+        const res = await axios.post(url, {
+            pokemon: name,
+            type: t
+        })
+        return res.data
+    }
+    
     const { data, error, isLoading, isValidating } = useSWR(`/api/catch/`, fetcher)
     if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
@@ -39,6 +41,10 @@ export default function Battle() {
                         <h2>{name} broke free!</h2>
                     )}
                     <img src={ball} />
+                    <br />
+                    <button onClick={() => setT(255)}>Poke Ball</button>
+                    <button onClick={() => setT(200)}>Great Ball</button>
+                    <button onClick={() => setT(150)}>Ultra Ball</button>
                 </>
             )}
         </div>

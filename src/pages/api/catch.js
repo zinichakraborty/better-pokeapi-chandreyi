@@ -7,10 +7,10 @@ export default async function handler(req, res) {
     } catch (error) {
         console.log(error)
     }
-    let type = req.body.type
+    let type = req.body.type;
     let hpMax = response.data.stats[0].base_stat
     let hpCurr = Math.floor(Math.random() * hpMax + 1)
-    let n = Math.floor(Math.random() * 255 + 1)
+    let n = Math.floor(Math.random() * type + 1)
     let ball = Math.floor(Math.random() * type + 1)
     let f = (hpMax * 255 * 4) / (hpCurr * ball)
     let caught = (f >= n)
@@ -21,6 +21,12 @@ export default async function handler(req, res) {
     }
     let color = response.data.color.name
     let item = 4;
+    if (type == 200) {
+        item = 3;
+    }
+    if (type == 150) {
+        item = 2;
+    }
     try {
         response = await axios.get('https://pokeapi.co/api/v2/item/' + item);
     } catch (error) {
