@@ -9,9 +9,9 @@ const fetcher = async (url) => {
 
 export default function Exp() {
     const level = 5
-    const name = "pikachu"
+    const name = "clefairy"
     const { data, error, isLoading, isValidating } = useSWR(`/api/experience/${name}?level=${level}`, fetcher)
-    if (isLoading) return <div>Loading</div>
+    if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
         <>
             <Link href="/"><h1>Better PokeAPI</h1></Link>

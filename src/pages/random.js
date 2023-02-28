@@ -9,7 +9,7 @@ const fetcher = async (url) => {
 
 export default function Random() {
     const { data, error, isLoading, isValidating } = useSWR("/api/", fetcher)
-    if (isLoading) return <div>Loading</div>
+    if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
         <>
             <Link href="/"><h1>Better PokeAPI</h1></Link>

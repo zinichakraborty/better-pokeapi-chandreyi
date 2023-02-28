@@ -10,7 +10,7 @@ const fetcher = async (url) => {
 export default function Evolve() {
     const name = "bulbasaur"
     const { data, error, isLoading, isValidating } = useSWR(`/api/evolve/${name}`, fetcher)
-    if (isLoading) return <div>Loading</div>
+    if (isLoading) return <div><h2>Loading</h2></div>
     if (!data) return (
         <>
             <Link href="/"><h1>Better PokeAPI</h1></Link>

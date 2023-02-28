@@ -11,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Link href="/"><h1>Better PokeAPI</h1></Link>
-      <h2>All Endpoints</h2>
+      <h2 id="main">All Endpoints</h2>
       <Link href="/random">Get a random Pokemon</Link>
       <Link href="/name">Get a Pokemon by name</Link>
       <Link href="/types">Get a Pokemon by type</Link>
