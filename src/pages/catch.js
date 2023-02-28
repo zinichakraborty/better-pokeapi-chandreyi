@@ -22,7 +22,7 @@ export default function Battle() {
             <h2>Must Implement your API. Data is empty</h2>
         </>
     )
-    let { caught, color } = data
+    let { caught, color, ball } = data
 
     return (
         <div style={{backgroundColor: `${color}`}}>
@@ -38,17 +38,9 @@ export default function Battle() {
                     ) : (
                         <h2>{name} broke free!</h2>
                     )}
+                    <img src={ball} />
                 </>
             )}
-
-            <button onclick = "ball(255)">Poke Ball</button>
-            <button onclick = "ball(200)">Great Ball</button>
-            <button onclick = "ball(150)">Ultra Ball</button>
         </div>
     )
-
-    function ball(val) {
-        t = val
-        Battle()
-    }
 }

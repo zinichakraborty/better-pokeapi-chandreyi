@@ -20,5 +20,12 @@ export default async function handler(req, res) {
         console.log(error)
     }
     let color = response.data.color.name
-    return res.status(200).send({caught : caught, color : color})
+    let item = 4;
+    try {
+        response = await axios.get('https://pokeapi.co/api/v2/item/' + item);
+    } catch (error) {
+        console.log(error)
+    }
+    let b = response.data.sprites.default
+    return res.status(200).send({caught : caught, color : color, ball : b})
 }
